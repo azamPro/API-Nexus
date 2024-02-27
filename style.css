@@ -10,7 +10,7 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
-    min-height: 90vh;
+    min-height: 85vh;
 }
 
 .header h1 {
@@ -25,23 +25,32 @@ body {
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
     gap: 30px;
     margin: 20px;
 }
+
 
 .card {
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    /* padding: 20px; */
-    /* width: calc(33% - 20px); */
     margin-bottom: 20px;
     transition: transform 0.2s;
 }
+
+
+
 /* ...existing styles... */
 
 .card .image{
     padding: 15px;
+}
+.card .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #777;
 }
 .card-image {
     width: 100%;
@@ -52,7 +61,7 @@ body {
 .card .content{
     border-top: 1px solid #000;
     margin: 0 5px;
-    padding: 20px;
+    padding: 20px 20px 0;
 }
 
 .status {
@@ -103,6 +112,12 @@ body {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+}
+
+.by{
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 14px;
 }
 
 footer {
