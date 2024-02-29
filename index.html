@@ -13,16 +13,27 @@
 
         gtag("config", "G-T2Q8KG0LGD");
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linl with bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <!-- link style file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <!-- link with google  -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- link with fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title>API NEXUS</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('0Vrk_eCV-opU4mZPo');
+        })();
+    </script>
 </head>
 
 <body>
@@ -31,7 +42,9 @@
         <div class="header">
             <p>Welcome</p>
             <h1> API NEXUS</h1>
-            <p>Explore our world of sleek web applications designed for seamless interaction and enhanced productivity. Your digital adventure starts here.
+            <!-- <p>Explore our world of sleek web applications designed for seamless interaction and enhanced productivity. Your digital adventure starts here. -->
+            <!-- </p> -->
+            <p>API Nexus is a dynamic showcase of API-powered projects, offering a platform for developers to display their creations and for enthusiasts to explore the potential of APIs. Perfect for both beginners seeking to learn and experts aiming to share, it's the ultimate hub for discovering and showcasing API innovations, free of charge.
             </p>
         </div>
         <div class="card-container">
@@ -46,8 +59,11 @@
                 <p>Discover the weather where you are. This tool provides instant weather details based on your current location, keeping you prepared for the day ahead.
                 </p>
                 <div class="bottom">
+                    <div class="apiLink">
+                        <a href="https://www.weatherapi.com/">API Link</a>
+                    </div>
                     <div class="status ">Status: live</div>
-                    <a href="./projects/Weather-app/" class="btn">Browse Project</a>
+                    <a href="https://azzamkh.sa/Weather-app/" class="btn">Browse Project</a>
                 </div>
                 <div class="by">
                     <p>By: Azzam Alkhodiriy</p>
@@ -60,12 +76,15 @@
                 </div>
                 <div class="content">
                     <h2>GitHub Repository Tracker</h2>
-                <p>Track your GitHub footprint. Enter your username and get a snapshot of your latest repository, complete with the latest update date. Ideal for developers to showcase their work.</p>
-                <div class="bottom">
-                    <div class="status">Status: Live</div>
-                    <a href="./projects/RepoTracker/" class="btn">Browse Project</a>
-                </div>
-                <div class="by">
+                    <p>Track your GitHub footprint. Enter your username and get a snapshot of your latest repository, complete with the latest update date. Ideal for developers to showcase their work.</p>
+                    <div class="apiLink">
+                        <a href="https://api.github.com/users/azamPro">API Link</a>
+                    </div>
+                    <div class="bottom">
+                        <div class="status">Status: Live</div>
+                        <a href="https://azzamkh.sa/RepoTracker/" class="btn">Browse Project</a>
+                    </div>
+                        <div class="by">
                     <p>By: Azzam Alkhodiriy</p>
                 </div>
                 </div>
@@ -77,31 +96,85 @@
                 <div class="content">
                     <h2>Cat Image Generator</h2>
                     <p>A fun and interactive app that generates adorable cat images with every click. Perfect for cat enthusiasts looking to brighten their day!</p>
+                    <div class="apiLink">
+                        <a href="https://thecatapi.com/">API Link</a>
+                    </div>
                     <div class="bottom">
                         <div class="status">Status: Live</div>
-                        <a href="projects/generate-image-cats/" class="btn">Browse Project</a>
+                        <a href="https://azzamkh.sa/cats/" class="btn">Browse Project</a>
                     </div>
                     <div class="by">
                         <p>By: Azzam Alkhodiriy</p>
                     </div>
                 </div>
-                
             </div>
+            <div class="card">
+                <div class="image">
+                    <img src="image/form-message.jpg" alt="Project Image" class="card-image">
+                </div>
+                <div class="content">
+                    <h2>Direct Mail Connector</h2>
+                    <p>Elevate your project's interaction with Direct Mail Connector, powered by EmailJS. This tool simplifies sending emails directly from your website, no server required. Ideal for feedback, updates, or any form of communication, ensuring your projects stay engaging and responsive.</p>
+                    <div class="apiLink">
+                        <a href="https://www.emailjs.com/">API Link</a>
+                    </div>
+                    <div class="bottom">
+                        <div class="status failed">Status: Stopped</div>
+                        <a href="https://azzamkh.sa/form-email/" class="btn">Browse Project</a>
+                    </div>
+                    <div class="by">
+                        <p>By: Azzam Alkhodiriy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container-btn">
+        <!-- Button trigger modal -->
+        <button onclick="showForm()" class="btn btn-primary">Add your projects</button>
+    </div>
+    
+    <div class="message-overlay">
+        <div class="message shadow-lg p-3 mb-5 bg-body rounded">
+            <h2>Contact Form</h2>
+            <form id="contactForm">
+                <div class="row-form mb-3">
+                    <label for="fullName">Name</label>
+                    <input type="text" class="form-control" id="fullName" name="name" placeholder="enter your name" required>
+                </div>
+                <div class="row-form mb-3">
+                    <label for="email_id">Email</label>
+                    <input type="email" class="form-control" id="email_id" name="email"placeholder="abcdef@gmail.com" required>
+                </div>
+                <div class="row-form mb-3">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="write your mesage and explain your project it to add it" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" onclick="sendMail()">Send Message</button>
+                    <button type="button" class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
+                </div>
+            </form>
             
         </div>
+        
     </div>
+    
+   
 <footer>
     <div class="footer-content">
-        <p>© 2024 Kerneltics. All Rights Reserved.</p>
+        <p>© 2024 Azzam. All Rights Reserved.</p>
         <p>Contact Us: azam.alkhodiriy@gmail.com</p>
         
-        
+
         <a href="https://azzamkh.sa/">Azzam Alkhodiriy</a>
     </div>
 </footer>
 
-    <!-- linke the js file -->
-    <script src="main.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 
 </html>
