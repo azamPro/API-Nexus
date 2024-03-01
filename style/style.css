@@ -136,7 +136,9 @@ body > .container {
     
 }
 
-
+ .card:nth-child(5) .content > h2, .card:nth-child(5) .content > p{
+    text-align: right;
+}
 
 /* ...existing styles... */
 
@@ -180,7 +182,7 @@ body > .container {
 
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .card h2 {
@@ -226,6 +228,14 @@ body > .container {
     font-size: 14px;
 }
 
+.by a{
+    text-decoration: none;    
+    font-size: 16px;
+}
+.by a p{
+    color: #005194;
+}
+
 
 .container-btn{
     text-align: center;
@@ -251,6 +261,8 @@ body > .container {
 .btn-secondary:hover {
     background-color: #a00d03;
 }
+
+
 footer {
     width: 100%;
     background-color: #12233d; /* Slightly lighter than the body for contrast */
